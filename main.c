@@ -10,20 +10,35 @@ struct no{
 };
 
 //Definindo variaveis
-typedef no *ptr_no;
-prt_no lista;
+typedef struct no *ptr_no;
+ptr_no lista;
 int op;
 
 //Prototipação
-void menu_mostra();
+void menu_mostrar();
 void menu_selecionar(int op);
 void lista_inserir(ptr_no lista);
 void lista_remover(ptr_no lista);
-void lista_mostrar(ptr_nno lista);
+void lista_mostrar(ptr_no lista);
 
 int main()
 {
-    printf("Hello world!\n");
+    setlocale(LC_ALL, "Portuguese");
+    srand(time(NULL)); //inicializando a maquina de numeros randomicos
+    op = 1;
+    //Criando o primeiro no da lista
+    lista = (ptr_no) malloc(sizeof(ptr_no));
+    lista->dado = 0;
+    lista->proximo = NULL;
+
+    //laço principal
+    while(op != 0){
+        system("CLS");
+        menu_mostrar();
+        scanf("%d", &op);
+        menu_selecionar(op);
+    }
+    system("Pause");
     return 0;
 }
 
@@ -43,29 +58,29 @@ void menu_selecionar(int op){
             lista_inserir(lista);
             break;
         case 2:
-            lista_rremover(lista);
+            lista_remover(lista);
             break;
     }
 }
 
 //Insere um item no final da lista
-void list_inserir(ptr_no lista){
+void lista_inserir(ptr_no lista){
     while(lista->proximo != NULL){
         lista = lista->proximo;
     }
-    lista->proximo = (ptr_no) malloc(sizeof(no));
+    lista->proximo = (ptr_no) malloc(sizeof(ptr_no));
     lista = lista->proximo;
     lista->dado = rand()%100;
     lista->proximo = NULL;
 }
 
 //Remove um elemento da lista
-void lista_remove(ptr_no lista){
+void lista_remover(ptr_no lista){
     int dado;
     ptr_no atual;
-    atual = (ptr_no) malloc(sizeof(no));
-    printf("\n\nEscolha um dos itens:\n");
-    scanf("%d", &dados);
+    atual = (ptr_no) malloc(sizeof(ptr_no));
+    printf("\n\nEscolha um dos itens: ");
+    scanf("%d", &dado);
     while((lista->dado != dado)){
         if(lista->proximo == NULL){
             break;
