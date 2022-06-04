@@ -77,3 +77,15 @@ void lista_remove(ptr_no lista){
         atual->proximo = lista->proximo;
     }
 }
+
+//Desenha o conteudo da lista na tela
+void lista_mostrar(ptr_no lista){
+    system("CLS");
+    while(1){
+        printf("%d, ", lista->dado);
+        if(lista->proximo == NULL){
+            break;
+        }
+        lista = lista->proximo;
+    }
+}
