@@ -36,3 +36,15 @@ void menu_mostrar(){
     printf("0 - Sair\n\n");
 }
 
+//Executa a opção escolhida no menu
+void menu_selecionar(int op){
+    switch(op){
+        case 1:
+            lista_inserir(lista);
+            break;
+        case 2:
+            lista_rremover(lista);
+            break;
+    }
+}
+
