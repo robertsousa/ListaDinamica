@@ -48,3 +48,13 @@ void menu_selecionar(int op){
     }
 }
 
+//Insere um item no final da lista
+void list_inserir(ptr_no lista){
+    while(lista->proximo != null){
+        lista = lista->proximo;
+    }
+    lista->proximo = (ptr_no) malloc(sizeof(no));
+    lista = lista->proximo;
+    lista->dado = rand()%100;
+    lista->proximo = null;
+}
