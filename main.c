@@ -26,3 +26,13 @@ int main()
     printf("Hello world!\n");
     return 0;
 }
+
+//Mostra o menu das opçoes
+void menu_mostrar(){
+    lista_mostrar(lista);
+    printf("\n\nEscolha uma das opções: \n");
+    printf("1 - Inserir no final da lista\n");
+    printf("2 - Remover um item da lista\n");
+    printf("0 - Sair\n\n");
+}
+
