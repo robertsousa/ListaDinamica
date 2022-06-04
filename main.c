@@ -14,6 +14,12 @@ typedef no *ptr_no;
 prt_no lista;
 int op;
 
+//Prototipação
+void menu_mostra();
+void menu_selecionar(int op);
+void lista_inserir(ptr_no lista);
+void lista_remover(ptr_no lista);
+void lista_mostrar(ptr_nno lista);
 
 int main()
 {
