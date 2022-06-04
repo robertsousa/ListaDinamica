@@ -89,3 +89,13 @@ void lista_mostrar(ptr_no lista){
         lista = lista->proximo;
     }
 }
+
+//Desenha o conteudo da lista na tela 2
+void lista_mostrar_2(ptr_no lista){
+    system("CLS");
+    while(lista->proximo != NULL){
+        printf("%d, ", lista->dado);
+        lista = lista->proximo;
+    }
+    printf("%d, ", lista->dado);
+}
